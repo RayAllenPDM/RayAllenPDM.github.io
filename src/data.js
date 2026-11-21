@@ -48,12 +48,16 @@ export const certifications = [
     org: 'CISCO',
     title: 'Operating Systems Basics',
     date: 'May 15, 2025',
-    thumb: C + 'cisco-operating-systems-basics-credential-thumb.jpg',
-    images: [
-      { src: C + 'cisco-operating-systems-basics-credential.jpg', label: 'Course completion credential' },
-      { src: C + 'cisco-operating-systems-basics.jpg', label: 'Certificate' },
-    ],
+    thumb: C + 'cisco-operating-systems-basics-thumb.jpg',
+    images: [{ src: C + 'cisco-operating-systems-basics.jpg', label: 'Certificate' }],
     pdf: C + 'cisco-operating-systems-basics.pdf',
+  },
+  {
+    org: 'CISCO',
+    title: 'Operating Systems Basics — Course Completion',
+    date: 'May 15, 2025',
+    thumb: C + 'cisco-operating-systems-basics-credential-thumb.jpg',
+    images: [{ src: C + 'cisco-operating-systems-basics-credential.jpg', label: 'Course completion credential' }],
   },
   {
     org: 'TESDA',
@@ -62,7 +66,6 @@ export const certifications = [
     thumb: C + 'tesda-introduction-to-css-thumb.jpg',
     images: [{ src: C + 'tesda-introduction-to-css.jpg', label: 'Certificate' }],
   },
-  { org: 'SEMINAR', title: 'Capstone Forum — Certificate of Attendance', date: 'Jan 21, 2025' },
 ]
 
 export const projects = [
