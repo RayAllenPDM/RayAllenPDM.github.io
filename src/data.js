@@ -23,11 +23,45 @@ export const skills = [
   { group: 'SOFT SKILLS', items: ['Leadership', 'Problem-solving', 'Filipino & English'] },
 ]
 
+// Certificates: click a card on the site to view it.
+// images = what shows in the viewer (several = the viewer gets ‹ › arrows)
+// pdf    = optional original file for the "Open PDF" button
+const C = 'assets/certs/'
 export const certifications = [
-  { org: 'CISCO', title: 'IT Customer Support Basics', date: 'Nov 18, 2026' },
-  { org: 'AWS TRAINING', title: 'AWS Cloud Practitioner Essentials', date: 'Nov 1, 2025' },
-  { org: 'CISCO', title: 'Operating System Basics', date: 'May 15, 2025' },
-  { org: 'TESDA', title: 'Introduction to CSS', date: 'Apr 20, 2025' },
+  {
+    org: 'CISCO',
+    title: 'IT Customer Support Basics',
+    date: 'Nov 18, 2026',
+    thumb: C + 'cisco-it-customer-support-basics-thumb.jpg',
+    images: [{ src: C + 'cisco-it-customer-support-basics.jpg', label: 'Certificate' }],
+    pdf: C + 'cisco-it-customer-support-basics.pdf',
+  },
+  {
+    org: 'AWS TRAINING',
+    title: 'AWS Cloud Practitioner Essentials',
+    date: 'Nov 1, 2025',
+    thumb: C + 'aws-cloud-practitioner-essentials-thumb.jpg',
+    images: [{ src: C + 'aws-cloud-practitioner-essentials.jpg', label: 'Certificate' }],
+    pdf: C + 'aws-cloud-practitioner-essentials.pdf',
+  },
+  {
+    org: 'CISCO',
+    title: 'Operating Systems Basics',
+    date: 'May 15, 2025',
+    thumb: C + 'cisco-operating-systems-basics-credential-thumb.jpg',
+    images: [
+      { src: C + 'cisco-operating-systems-basics-credential.jpg', label: 'Course completion credential' },
+      { src: C + 'cisco-operating-systems-basics.jpg', label: 'Certificate' },
+    ],
+    pdf: C + 'cisco-operating-systems-basics.pdf',
+  },
+  {
+    org: 'TESDA',
+    title: 'Introduction to CSS',
+    date: 'Apr 20, 2025',
+    thumb: C + 'tesda-introduction-to-css-thumb.jpg',
+    images: [{ src: C + 'tesda-introduction-to-css.jpg', label: 'Certificate' }],
+  },
   { org: 'SEMINAR', title: 'Capstone Forum — Certificate of Attendance', date: 'Jan 21, 2025' },
 ]
 

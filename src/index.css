@@ -293,3 +293,38 @@ h2 { margin: 0; font-size: 36px; font-weight: 600; }
 .intro-typing .intro-bg, .intro-done .intro-bg { animation-duration: 14s, 3s; }
 @keyframes intro-bg-sway { from { rotate: -2deg; } to { rotate: 2deg; } }
 .fx-scan { background: linear-gradient(180deg, transparent, rgba(255,215,140,.05) 60%, rgba(255,230,170,.12) 97%, transparent); }
+
+/* Clickable certificates */
+.cert-clickable { font: inherit; color: inherit; text-align: left; cursor: pointer; align-items: stretch; transition: border-color .2s ease, transform .2s ease, box-shadow .2s ease; }
+.cert-clickable:hover, .cert-clickable:focus-visible { border-color: rgba(127,233,255,.55); transform: translateY(-3px); box-shadow: 0 10px 30px -10px rgba(127,233,255,.35); }
+.cert-clickable:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+.cert-thumb { position: relative; display: block; margin-bottom: 8px; border-radius: 6px; overflow: hidden; border: 1px solid var(--line); background: #fff; aspect-ratio: 4 / 3; }
+.cert-thumb img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: top; transition: transform .35s ease; }
+.cert-clickable:hover .cert-thumb img { transform: scale(1.04); }
+.cert-view { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; background: rgba(5,11,20,.62); color: var(--accent); font-size: 12px; letter-spacing: .16em; opacity: 0; transition: opacity .2s ease; }
+.cert-clickable:hover .cert-view, .cert-clickable:focus-visible .cert-view { opacity: 1; }
+
+/* Certificate viewer */
+.cv-backdrop { position: fixed; inset: 0; z-index: 90; display: flex; align-items: center; justify-content: center; padding: 24px; background: rgba(2,6,12,.82); backdrop-filter: blur(4px); animation: intro-in .2s ease-out both; }
+.cv-dialog { width: min(1000px, 100%); max-height: calc(100vh - 48px); display: flex; flex-direction: column; gap: 16px; padding: 20px; border: 1px solid var(--line-strong); border-radius: 12px; background: #07101c; box-shadow: 0 30px 80px rgba(0,0,0,.6); animation: cv-pop .28s cubic-bezier(.3,1.4,.5,1) both; }
+@keyframes cv-pop { from { opacity: 0; transform: scale(.94); } to { opacity: 1; transform: none; } }
+.cv-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 16px; }
+.cv-titles { display: flex; flex-direction: column; gap: 4px; min-width: 0; }
+.cv-titles h3 { margin: 0; font-size: 22px; font-weight: 600; }
+.cv-close { flex: none; width: 44px; height: 44px; display: inline-flex; align-items: center; justify-content: center; border-radius: 8px; border: 1px solid var(--line-strong); background: transparent; color: var(--text); cursor: pointer; }
+.cv-close:hover { background: rgba(127,233,255,.1); }
+.cv-stage { position: relative; flex: 1 1 auto; min-height: 0; display: flex; align-items: center; justify-content: center; }
+.cv-img { display: block; max-width: 100%; max-height: calc(100vh - 230px); object-fit: contain; border-radius: 6px; background: #fff; animation: intro-in .25s ease-out both; }
+.cv-nav { position: absolute; top: 50%; translate: 0 -50%; width: 44px; height: 44px; border-radius: 50%; border: 1px solid var(--line-strong); background: rgba(5,11,20,.8); color: var(--accent); font-size: 26px; line-height: 1; cursor: pointer; }
+.cv-nav:hover { background: rgba(127,233,255,.15); }
+.cv-prev { left: 8px; }
+.cv-next { right: 8px; }
+.cv-actions { display: flex; flex-wrap: wrap; gap: 12px; justify-content: flex-end; }
+.cv-actions .btn { font-size: 15px; min-height: 44px; padding: 0 20px; }
+@media (max-width: 760px) {
+  .cv-backdrop { padding: 12px; }
+  .cv-dialog { padding: 14px; }
+  .cv-titles h3 { font-size: 18px; }
+  .cv-actions { justify-content: stretch; }
+  .cv-actions .btn { flex: 1 1 auto; justify-content: center; }
+}
