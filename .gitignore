@@ -1,0 +1,9 @@
+node_modules
+dist
+.DS_Store
+*.log
+
+# Secrets — never upload
+.env
+.env.*
+!.env.example
